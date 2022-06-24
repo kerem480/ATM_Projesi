@@ -1,2 +1,40 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+işlemler =["para çekme 1","para yatırma 2","bakiye görme 3","çıkış yapma 4","geri ödemeli kredi çekme 5"]
+
+bakiye=500
+
+ask = input("Lütfen yapmak istediğiniz işlemi seçiniz: ")
+
+if ask == "1":
+    print("ne kadar çekmek istiyorsunuz?")
+    pull = int(input("Miktar: "))
+
+    if pull > bakiye:
+        print("bu kadar miktar çekemzsiniz bakiyenizde o kadar para yok")
+
+    else:
+        bakiye -= pull
+        print("yapılan işlemden sonra kalan paranız" + bakiye)
+
+elif ask == "2":
+    print("ne kadar yatırmak istiyorsunuz?")
+    deposit= int(input("Miktar: "))
+    bakiye += deposit
+    print("kalan bakiyeniz: "+ str(bakiye))
+
+elif ask == "3":
+    print("bakiyeniz " + str(bakiye))
+
+elif ask == "4":
+    print("çıkış yapılıyor...")
+
+
+elif ask == "5":
+    print("maksimum 300 tl geri ödemeli kredi çekebilirsiniz")
+    max_tl=300
+    money=int(input("geri ödemeli çekmek istediğiniz kredi miktarını giriniz: "))
+    if max_tl < money:
+        print("bu kadar miktar çekemezsiniz")
+    else:
+        print(str(money) + " tl çektiniz")
