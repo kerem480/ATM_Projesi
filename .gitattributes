@@ -1,40 +1,40 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-işlemler =["para çekme 1","para yatırma 2","bakiye görme 3","çıkış yapma 4","geri ödemeli kredi çekme 5"]
+Options =["Withdraw money 1","Deposit money 2","View cash 3","Exit 4","Repayment loan 5"]
 
-bakiye=500
+cash=500
 
-ask = input("Lütfen yapmak istediğiniz işlemi seçiniz: ")
+ask = input("Please select the action you want to do: ")
 
 if ask == "1":
-    print("ne kadar çekmek istiyorsunuz?")
-    pull = int(input("Miktar: "))
+    print("How much money do you want to withdraw?")
+    pull = int(input("Quantity: "))
 
-    if pull > bakiye:
-        print("bu kadar miktar çekemzsiniz bakiyenizde o kadar para yok")
+    if pull > cash:
+        print("You can't withdraw that much because you don't have that much in your balance.")
 
     else:
-        bakiye -= pull
-        print("yapılan işlemden sonra kalan paranız" + bakiye)
+        cash -= pull
+        print("Your remaining money after the transaction" + cash)
 
 elif ask == "2":
-    print("ne kadar yatırmak istiyorsunuz?")
-    deposit= int(input("Miktar: "))
-    bakiye += deposit
-    print("kalan bakiyeniz: "+ str(bakiye))
+    print("How much money do you want to deposit?")
+    deposit= int(input("Quantity: "))
+    cash += deposit
+    print("Your remaining cash: "+ str(cash))
 
 elif ask == "3":
-    print("bakiyeniz " + str(bakiye))
+    print("Cash " + str(cash))
 
 elif ask == "4":
-    print("çıkış yapılıyor...")
+    print("Exiting...")
 
 
 elif ask == "5":
-    print("maksimum 300 tl geri ödemeli kredi çekebilirsiniz")
+    print("You can withdraw a maximum of 300 TL repayment credit.")
     max_tl=300
-    money=int(input("geri ödemeli çekmek istediğiniz kredi miktarını giriniz: "))
+    money=int(input("Enter the loan amount you want to withdraw with repayment: "))
     if max_tl < money:
-        print("bu kadar miktar çekemezsiniz")
+        print("You cannot withdraw that much.")
     else:
-        print(str(money) + " tl çektiniz")
+        print(str(money) + " You pulled back ")
